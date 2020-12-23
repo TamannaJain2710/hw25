@@ -6,8 +6,8 @@ class Paper  {
             density: 1,
             friction: 0,
         }
-        this.body = Bodies.circle(100,660,70,options);
-    
+        this.body = Bodies.circle(100,660,35,options);
+        this.r = 40;
         this.image = loadImage("a.png");
         World.add(world,this.body);
 
@@ -17,8 +17,8 @@ class Paper  {
             push();
             var pos = this.body.position;
             translate(pos.x,pos.y);
-            imageMode(CENTER);
-            image(this.image,0,0,70,70);
+            imageMode(RADIUS);
+            image(this.image,0,0,this.r,this.r);
             pop();
         }
 
